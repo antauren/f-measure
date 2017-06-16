@@ -1,7 +1,5 @@
 # http://www.michurin.net/computer-science/precision-and-recall.html
 
-
-
 import numpy as np
 
 def f_measure(real, forecast):
@@ -23,7 +21,6 @@ for i in range(len(real)):
 	real[i] = real[i].strip()
 	forecast[i] = forecast[i].strip()
 
-
 headers = []
 for i in real + forecast:
 	i = i.strip()
@@ -31,15 +28,10 @@ for i in real + forecast:
 		headers.append(i)
 
 dict_headers = {}
-
 for i in range(len(headers)):
 	dict_headers[headers[i]] = i
 
 print(dict_headers)
-
-#headers.sort()
-
-#print()
 
 real_dict = {}
 forecast_dict = {}
@@ -54,7 +46,6 @@ for i in range(m):
 print(real_dict)
 print(forecast_dict)
 
-
 matr = np.zeros((n, n))
 
 for i in range(m):
@@ -64,9 +55,7 @@ for i in range(m):
 
 a = np.array(matr)
 
-print()
-print(a)
-print()
+print('\n', a, '\n')
 
 diagonal = np.diag(a)
 print(diagonal, 'диагональ матрицы')
@@ -88,17 +77,14 @@ for i in range(len(diagonal)):
 	if sum_rows[i] != 0:
 		sr_p.append( diagonal[i]/ sum_rows[i]   )
 
-
 sr_p = np.array(sr_p)
 sr_r = np.array(sr_r)
-
 
 sr_p = sr_p.mean()
 sr_r = sr_r.mean()
 
 print("-------------------------")
 print(round(sr_p, 5), '\t'*2, round(sr_r,5))
-
 
 f = 2 * sr_r * sr_p / (sr_p + sr_r)
 
