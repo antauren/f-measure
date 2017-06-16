@@ -84,9 +84,9 @@ print('\nPrecision\tRecall')
 
 for i in range(len(diagonal)):
 	if sum_columns[i] != 0:
-		sr_p.append( diagonal[i]/ sum_columns[i]   )
+		sr_r.append( diagonal[i]/ sum_columns[i]   )
 	if sum_rows[i] != 0:
-		sr_r.append( diagonal[i]/ sum_rows[i]   )
+		sr_p.append( diagonal[i]/ sum_rows[i]   )
 
 
 sr_p = np.array(sr_p)
