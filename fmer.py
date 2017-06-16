@@ -53,17 +53,17 @@ for i in range(m):
 	k =  dict_headers[ forecast_dict[i] ]
 	matr[ k ][ j ] += 1
 
-a = np.array(matr)
+#a = np.array(matr)
 
-print('\n', a, '\n')
+print('\n', matr, '\n')
 
-diagonal = np.diag(a)
+diagonal = np.diag(matr)
 print(diagonal, 'диагональ матрицы')
 
-sum_columns = a.sum(axis=1)
+sum_columns = matr.sum(axis=1)
 print(sum_columns, 'суммы строк') 
 
-sum_rows = a.sum(axis=0)
+sum_rows = matr.sum(axis=0)
 print(sum_rows, 'суммы столбцов')
 
 sr_r = []
